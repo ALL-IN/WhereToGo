@@ -14,6 +14,8 @@ public class Event implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(nullable = false)
+    private double price;
+    @Column(nullable = false)
     private String eventName;
     @Column(nullable = false)
     private EventType eventType;
@@ -52,6 +54,14 @@ public class Event implements Serializable{
 
     public void setEventToWhom(EventToWhom eventToWhom) {
         this.eventToWhom = eventToWhom;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public enum EventType {
