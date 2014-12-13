@@ -1,4 +1,4 @@
-package pack;
+package org.where2go.persistence.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

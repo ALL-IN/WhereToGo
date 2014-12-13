@@ -1,10 +1,10 @@
-package controller;
+package org.where2go.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pack.Event;
-import pack.EventService;
+import org.where2go.persistence.model.Event;
+import org.where2go.services.EventService;
 
 import java.util.Date;
 @RestController
@@ -16,34 +16,29 @@ public class EventController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Event createEmployee(@RequestBody Event event) {
-        log.debug("qwe");
-        eventService.persist(event);
+        eventService.create(event);
+        log.debug("Event was created");
         return event;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public Event update(@RequestBody Event event) {
-//        logger.info("Start createEmployee.");
-        eventService.persist(event);
+        eventService.update(event);
+        log.debug("Event was updated");
         return event;
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public Event delete(@RequestBody Event event) {
-//        logger.info("Start createEmployee.");
-        eventService.persist(event);
+        eventService.delete(event);
+        log.debug("Event was deleted");
         return event;
     }
 
     @RequestMapping(value = "/get-event", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    Event getEvent() {
-        Event event = new Event();
-        event.setEventName("qwe");
-        event.setEventToWhom(Event.EventToWhom.COUPLE);
-        event.setEventType(Event.EventType.EDUCATIONAL);
-        event.setStartEventDate(new Date());
-        return event;
+    public @ResponseBody Event retrieve(Long id) {
+       return eventService.retrieve(id);
     }
+
+
 }
