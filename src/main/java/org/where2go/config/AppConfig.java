@@ -1,4 +1,4 @@
-package org.where2go.controller;
+package org.where2go.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.where2go.dao.EventDao;
 import org.where2go.services.EventService;
 
 //
@@ -23,6 +24,11 @@ public class AppConfig extends SpringBootServletInitializer {
     @Bean
     public EventService getEventService() {
         return new EventService();
+    }
+
+    @Bean
+    public EventDao getEventDao() {
+        return new EventDao();
     }
 
     @Override

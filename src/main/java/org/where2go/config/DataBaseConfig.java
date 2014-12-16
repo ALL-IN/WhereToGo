@@ -1,4 +1,4 @@
-package org.where2go.controller;
+package org.where2go.config;
 
 import org.hibernate.dialect.MySQL5Dialect;
 import org.hibernate.jpa.HibernatePersistenceProvider;

@@ -1,5 +1,6 @@
-package org.where2go.controller;
+package org.where2go.dao;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,8 +28,8 @@ public class EventDao {
         this.entityManager = entityManager;
     }
 
-    public void create(Event person) {
-        entityManager.persist(person);
+    public void create(Event event) {
+        entityManager.persist(event);
     }
 
     public void update(Event event) {

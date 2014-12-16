@@ -13,7 +13,7 @@
         <version>1.1.9.RELEASE</version>
     </parent>
     <properties>
-        <start-class>org.where2go.controller.DataBaseConfig</start-class>
+        <start-class>org.where2go.config.DataBaseConfig</start-class>
     </properties>
 
     <dependencies>
